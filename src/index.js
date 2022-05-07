@@ -93,7 +93,7 @@ onAuthStateChanged(
         // console.log('onAuthStateChanged: accessToken', accessToken);
       });
 
-      console.log(user);
+      // console.log(user);
       // Сздаем ячейку в databse при авторизации
       function writeUserData(userId, name, email) {
         console.log('запись');
@@ -129,14 +129,27 @@ onAuthStateChanged(
         .then(snapshot => {
           if (snapshot.exists()) {
             console.log(snapshot.val());
+            console.log(Object.values(snapshot.val()));
+            return Object.values(snapshot.val());
           } else {
             console.log('No data available');
           }
         })
+        .then(filmList => {
+          document.querySelector('.container').insertAdjacentHTML(
+            'afterbegin',
+            filmList
+              .map(film => {
+                return `<p>${film}</p>`;
+              })
+              .join(''),
+          );
+        })
         .catch(error => {
           console.error(error);
         });
-      console.log(filmsArray);
+
+      // console.log(Object.values(filmsArray));
     } else {
       document.querySelector('.database').classList.add('visually-hidden');
     }
@@ -145,7 +158,6 @@ onAuthStateChanged(
     console.log(error);
   },
 );
-console.log(filmsArray);
 
 //Firebase Storage
 
