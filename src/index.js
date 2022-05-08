@@ -124,6 +124,10 @@ onAuthStateChanged(
           updateFilms(inputText);
         }
       }
+
+      // saveFilm
+      // const filmsRef = ref(db, 'users/' + uid + '/films');
+
       //get films
       const filmsArray = get(filmsRef)
         .then(snapshot => {

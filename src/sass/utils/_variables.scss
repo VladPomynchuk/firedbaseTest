@@ -1,0 +1,20 @@
+$colors: (accent-color: #FF6B08,
+    primary-text-color: #FFFFFF,
+    second-text-color: #000000,
+    third-text-color: #545454,//footer text
+    four-text-color:#8c8c8c,//film-modal-text
+    error-text-color: #FF001B, //under searchForm
+
+    section-background: #FFFFFF,
+    footer-background:#F7F7F7,
+
+    transparent-color: rgba(0, 0, 0, 0), //headerBtn
+    first-border-color: #FFFFFF, //btnBorder
+    second-border-color: rgba(0, 0, 0, 1), //btnBorder
+
+    page-btn-color: #F7F7F7, //(aboveFooter)
+);
+
+@function getColor($key) {
+    @return map-get($colors, $key);
+};
