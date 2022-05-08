@@ -141,3 +141,26 @@
   color: getColor('primary-text-color');
   @include font(12px, 14px, 500);
 }
+
+.qwe {
+  margin: 0 auto;
+  padding: 0 20px;
+
+  //MOBILE
+
+  @media screen and (min-width: $mobile) {
+    width: $mobile;
+  }
+  //TABLET
+
+  @media screen and (min-width: $tablet) {
+    width: $tablet;
+    padding: 0 32px;
+  }
+
+  // DESKTOP
+
+  @media screen and (min-width: $desktop) {
+    width: $desktop;
+  }
+}
